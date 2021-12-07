@@ -1,0 +1,68 @@
+.App {
+  padding: 1em;
+  display: grid;
+  grid-auto-rows: 6em;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(auto-fill, minMax(25em, 1fr));
+  gap: 1em;
+}
+.wrapTitle {
+  width: 1440px;
+  height: 114px;
+  margin: 0 0 70px;
+  padding: 44px 1082px 42px 150px;
+  box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+}
+.title {
+  width: 208px;
+  height: 28px;
+  object-fit: contain;
+  font-family: Baskerville;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #3b3b3b;
+}
+.cardNews {
+  color: var(--text);
+  border: 2px solid var(--greyLine);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  overflow: hidden;
+}
+.infoNews {
+  display: grid;
+  align-items: center;
+  padding: 1.6em;
+}
+.infoNews h4 {
+  width: 27.5em;
+  height: 1.3em;
+  font-size: 0.875em;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  font-family: roboto;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  color: var(--text);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.timeAndAuthor {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  color: var(--textLigth);
+}
+.fav {
+  display: grid;
+  place-items: center;
+  background-color: var(--greyDark);
+}
