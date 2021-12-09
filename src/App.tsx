@@ -1,23 +1,21 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
+import { Route, useRoute } from 'wouter'
 import './App.css'
+
+import { AllNews } from './pages/all'
 import { Header } from './components/header'
-import { NewsList } from './components/newsList'
-import { SelectTopic } from './components/searchNews'
-import { getNews } from './hooks/news'
+import { Nav } from './components/nav'
+import { Faves } from './pages/faves'
 
 function App () {
-  // save topic in the localStorage
-  const [topic, setTopic] = useState(window.localStorage.getItem('topic') || '')
-  const { arrayNewsData, loading, isError } = getNews({ topic })
-  console.log(isError)
+  const [match, _] = useRoute('/all') // eslint-disable-line no-unused-vars
 
-  if (isError) return <h1>There was an error getting the news results.</h1>
-  if (loading) return <h1>Loading...</h1>
   return (
     <Fragment>
       <Header />
-      <SelectTopic setTopic={setTopic} topic={topic}/>
-      <NewsList {...arrayNewsData} />
+      <Nav isActive={match}/>
+      <Route path='/all' component={AllNews}/>
+      <Route path='/faves' component={Faves}/>
     </Fragment>
   )
 }
