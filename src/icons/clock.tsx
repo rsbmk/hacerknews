@@ -1,4 +1,4 @@
-export const clock = ({ width = '16', height = '16', fill = '#606060' }) => (
+export const Clock = ({ width = '16', height = '16', fill = '#606060' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 16 16">
     <path
       fill={fill}
