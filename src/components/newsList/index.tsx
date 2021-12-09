@@ -1,10 +1,10 @@
-import { NewsData } from '../../interfaces'
+import { singleNews } from '../../interfaces'
 import { NewsCard } from '../newsCard'
 
-export function NewsList ({ hits }:NewsData) {
+export function NewsList ({ arrayNews }:{arrayNews: singleNews[]}) {
   return (
     <main className="newsList">
-      {hits.map(news => (
+      {arrayNews.map(news => (
         <NewsCard key={news.objectID} {...news}/>
       ))}
     </main>

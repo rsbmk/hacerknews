@@ -1,8 +1,6 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
-type prop = { setTopic: Dispatch<SetStateAction<string>>; topic: string };
-
-export function SelectTopic ({ setTopic, topic }: prop) {
+export function SelectTopic ({ setTopic, topic }: { setTopic: Dispatch<SetStateAction<string>>, topic: string }) {
   const handleChange = (evt: ChangeEvent<HTMLSelectElement>) => {
     setTopic(evt.target.value)
   }

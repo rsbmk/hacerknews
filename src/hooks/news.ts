@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { NewsData } from '../interfaces'
 import { getNewsData } from './utils/getNewsData'
 
-export function getNews ({ topic = '' }) {
+export function getNews ({ topic = '' } = {}) {
   const [arrayNewsData, setNews] = useState<NewsData>({} as NewsData)
   const [loading, setLoading] = useState(true)
   const [isError, setError] = useState(false)
