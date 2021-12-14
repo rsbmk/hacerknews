@@ -43,6 +43,10 @@
   grid-template-columns: 85% 15%;
   overflow: hidden;
 }
+.cardNews:hover {
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+}
 .infoNews {
   text-decoration: none;
   display: grid;
@@ -80,6 +84,11 @@
   place-items: center;
   background-color: var(--greyDark);
 }
+.fav button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .sectionNav {
   display: grid;
   place-items: center;
@@ -98,5 +107,13 @@
 }
 .navs a.itemActive {
   border: solid 1px #1797ff;
+  color: #1797ff;
+}
+.default404 {
+  font-size: 2em;
+  color: #606060;
+  margin: 2em 1em;
+}
+.default404 a {
   color: #1797ff;
 }
