@@ -89,6 +89,10 @@
   border: none;
   cursor: pointer;
 }
+.noFaves {
+  text-align: center;
+  margin: 2em;
+}
 .sectionNav {
   display: grid;
   place-items: center;
@@ -116,4 +120,17 @@
 }
 .default404 a {
   color: #1797ff;
+}
+.nextPage {
+  display: block;
+  margin: 3em auto;
+  padding: 0.5em 1em;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.nextPage:hover {
+  background-color: #1797ff;
+  color: #fff;
+  transition: background-color 0.4s ease-in-out;
 }

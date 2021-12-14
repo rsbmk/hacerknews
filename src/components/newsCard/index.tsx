@@ -2,11 +2,11 @@ import { singleNews } from '../../interfaces'
 import { FaveNews } from '../faveNews'
 import { InfoNews } from '../infoNews'
 
-export function NewsCard ({ created_at, author, story_title, story_url, objectID }: singleNews) {
+export function NewsCard (singleNews: singleNews) {
   return (
     <article className="cardNews">
-      <InfoNews created_at={created_at} author={author} story_title={story_title} story_url={story_url}/>
-      <FaveNews objectID={objectID}/>
+      <InfoNews {...singleNews}/>
+      <FaveNews {...singleNews}/>
     </article>
   )
 }
