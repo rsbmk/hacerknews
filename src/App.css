@@ -122,15 +122,26 @@
   color: #1797ff;
 }
 .nextPage {
-  display: block;
-  margin: 3em auto;
-  padding: 0.5em 1em;
-  border: 0;
-  border-radius: 4px;
+  margin: 3em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nextPage button {
+  margin: 0 8px 0 0;
+  height: 3em;
+  padding: 9px;
+  border-radius: 6px;
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
   cursor: pointer;
 }
-.nextPage:hover {
-  background-color: #1797ff;
+.nextPage button:hover {
+  /* background-color: #1797ff; */
+  background-color: #1890ff;
   color: #fff;
   transition: background-color 0.4s ease-in-out;
+}
+svg[direction="rigth"] {
+  transform: rotate(180deg);
 }

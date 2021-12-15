@@ -9,7 +9,6 @@ export function NewsList ({ arrayNews }: { arrayNews: singleNews[] | undefined }
           <NewsCard key={news.objectID} {...news} />
         ))}
       </main>
-      {/* <button onClick={nextPage} className="nextPage">Next page</button> */}
     </>
   )
 }
