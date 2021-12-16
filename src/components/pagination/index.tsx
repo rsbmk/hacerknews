@@ -1,14 +1,19 @@
 // import { UseNews } from '../../hooks/news'
-import { Arrow } from '../../icons/arrow'
+import { useCallback, useEffect } from 'react'
+import { useNearScrean } from '../../hooks/nearScrean'
+import debounce from 'just-debounce-it'
 
 export function Pagination ({ page, setPage }: { page: number; setPage: (page: number) => void }) {
-  return (
-    <section className="nextPage">
-      {page !== 0 && <button onClick={() => setPage(page - 1)}><Arrow/></button>}
-      <button>{page}</button>
-      <button onClick={() => setPage(page + 1)}>
-        <Arrow direct="rigth" />
-      </button>
-    </section>
+  const { elemetRef, isNearScrean } = useNearScrean({ one: false })
+
+  const handleNextPage = useCallback(
+    debounce(() => setPage(page + 1), 500),
+    [page]
   )
+
+  useEffect(() => {
+    if (isNearScrean) handleNextPage()
+  }, [isNearScrean])
+
+  return <div ref={elemetRef} />
 }
