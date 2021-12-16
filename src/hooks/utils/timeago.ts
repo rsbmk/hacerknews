@@ -25,5 +25,5 @@ export function useTimeAgo ({ created_at }: { created_at: string }) {
   const { value, unit } = getDateDiff(timestam.getTime())
 
   const rtf = new Intl.RelativeTimeFormat('en', { style: 'short' })
-  return rtf.format(value, unit)
+  return rtf.format(value, unit as Intl.RelativeTimeFormatUnit)
 }
