@@ -1,3 +1,4 @@
+import { shouldPolyfill } from '@formatjs/intl-relativetimeformat/should-polyfill'
 type DATE_UNITS_TYPE = [string, number][];
 
 const DATE_UNITS: DATE_UNITS_TYPE = [
@@ -6,8 +7,24 @@ const DATE_UNITS: DATE_UNITS_TYPE = [
   ['minute', 60],
   ['second', 1]
 ]
+async function polyfill (locale: string) {
+  if (!shouldPolyfill(locale)) {
+    return
+  }
+  // Load the polyfill 1st BEFORE loading data
+  await import('@formatjs/intl-relativetimeformat/polyfill')
 
+  switch (locale) {
+    case 'fr':
+      await import('@formatjs/intl-relativetimeformat/locale-data/fr')
+      break
+    default:
+      await import('@formatjs/intl-relativetimeformat/locale-data/en')
+      break
+  }
+}
 const getDateDiff = (timestamp: number) => {
+  polyfill('en')
   const now = Date.now()
   const diff = (timestamp - now) / 1000
 
