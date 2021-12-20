@@ -8,15 +8,6 @@
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
   "dependencies": {
     "@formatjs/intl-getcanonicallocales": "^1.8.0",
     "@formatjs/intl-locale": "^2.4.41",
